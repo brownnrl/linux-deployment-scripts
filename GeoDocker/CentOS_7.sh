@@ -115,7 +115,7 @@ echo "installing git..."
 yum install -y git
 
 echo "cloning geo-docker library and starting geomesa..."
-su $SSUSER -c 'cd ~; git clone https://github.com/geodocker/geodocker-geomesa.git; cd ~/geodocker-geomesa/geodocker-accumulo-geomesa; docker-compose up;"
+# su $SSUSER -c 'cd ~; git clone https://github.com/geodocker/geodocker-geomesa.git; cd ~/geodocker-geomesa/geodocker-accumulo-geomesa; docker-compose up;"
 
 #
 echo All finished!
