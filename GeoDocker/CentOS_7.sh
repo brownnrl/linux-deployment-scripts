@@ -8,8 +8,6 @@ if [[ ! $SSUSER ]]; then read -p "Sudo user username?" SSUSER; fi
 if [[ ! $SSPASSWORD ]]; then read -p "Sudo user password?" SSPASSWORD; fi
 if [[ ! $SSPUBKEY ]]; then read -p "SSH pubkey (installed for root and sudo user)?" SSPUBKEY; fi
 
-script stackscript.log
-
 # set up sudo user
 echo Setting sudo user: $SSUSER...
 useradd $SSUSER && echo $SSPASSWORD | passwd $SSUSER --stdin
