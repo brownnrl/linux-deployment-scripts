@@ -1,4 +1,4 @@
-MP_PATH=~/tmp_install_python
+TMP_PATH=~/tmp_install_python
 
 # Versions section
 PYTHON_MAJOR=2.7
