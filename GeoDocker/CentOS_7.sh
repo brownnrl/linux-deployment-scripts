@@ -8,6 +8,8 @@ if [[ ! $SSUSER ]]; then read -p "Sudo user username?" SSUSER; fi
 if [[ ! $SSPASSWORD ]]; then read -p "Sudo user password?" SSPASSWORD; fi
 if [[ ! $SSPUBKEY ]]; then read -p "SSH pubkey (installed for root and sudo user)?" SSPUBKEY; fi
 
+script stackscript.log
+
 # set up sudo user
 echo Setting sudo user: $SSUSER...
 useradd $SSUSER && echo $SSPASSWORD | passwd $SSUSER --stdin
@@ -124,8 +126,9 @@ yum install -y wget
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 pip install requests
-su $SSUSER -c 'cd ~ && curl -o googledoc.py -L https://raw.githubusercontent.com/brownnrl/linux-deployment-scripts/master/GeoDocker/googledoc.py && chmod +x googledoc.py && ./googledoc.py 19GHBWBresVR6ZTfgRBQNzR_iIW-vXU3e opensky.csv.id'
+su $SSUSER -c 'cd ~ && curl -o googledoc.py -L https://raw.githubusercontent.com/brownnrl/linux-deployment-scripts/master/GeoDocker/googledoc.py && chmod +x googledoc.py && ./googledoc.py 19GHBWBresVR6ZTfgRBQNzR_iIW-vXU3e opensky.csv.gz && gunzip opensky.csv.gz'
 
 
 #
 echo All finished!
+exit
